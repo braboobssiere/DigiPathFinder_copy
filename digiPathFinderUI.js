@@ -311,7 +311,7 @@ function populateMoveList(){
 }
 
 function findDigiRoute(source, target){
-    findSkillRoute(source, target);
+    findSkillRoute();
 }
 
 var overlayTimer;
@@ -320,7 +320,7 @@ var digiWorker;
 var pathsTried = 0;
 var totalPaths = 1;
 
-function findSkillRoute(source, target){
+function findSkillRoute(){
     $("#path_container_content").fadeOut("fast");
     overlayTimer = (new Date).getTime();
     $("#overlay").fadeIn("fast");
