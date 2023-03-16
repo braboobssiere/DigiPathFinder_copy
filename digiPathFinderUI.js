@@ -311,7 +311,7 @@ function populateMoveList(){
 }
 
 function findDigiRoute(source, target){
-	findSkillRoute();
+    findSkillRoute(source, target);
 }
 
 var overlayTimer;
@@ -319,30 +319,41 @@ var path;
 var digiWorker;
 var pathsTried = 0;
 var totalPaths = 1;
-function findSkillRoute(){
-	$("#path_container_content").fadeOut("fast");
-	overlayTimer = (new Date).getTime();
-	$("#overlay").fadeIn("fast");
-	var source = $("#start_digi").val();
-	var target = $("#end_digi").val();
-	digiWorker = new Worker('digiPathWorker.js');
-	digiWorker.postMessage([pathFinder.getParams(), source, target]);
-	digiWorker.onmessage = function(e) {
-		pathFinder.currentLookupMode = "skill";		
-		if(e.data.type == "result"){
-			path = e.data.data;
-			clearOverlay();
-		} else if(e.data.type == "progress_init"){
-			totalPaths = e.data.data || 1;
-			pathsTried = 0;
-			displayProgress();
-			$("#progress_display").fadeIn("fast");
-		} else if(e.data.type == "progress_update"){
-			pathsTried = e.data.data;
-			displayProgress();
-		}		
-	}	
+
+function findSkillRoute(source, target){
+    $("#path_container_content").fadeOut("fast");
+    overlayTimer = (new Date).getTime();
+    $("#overlay").fadeIn("fast");
+
+    digiWorker = new Worker('digiPathWorker.js');
+    digiWorker.postMessage([pathFinder.getParams(), source, target]);
+    digiWorker.onmessage = function(e) {
+        pathFinder.currentLookupMode = "skill";        
+        if(e.data.type == "result"){
+            path = e.data.data;
+            clearOverlay();
+        } else if(e.data.type == "progress_init"){
+            totalPaths = e.data.data || 1;
+            pathsTried = 0;
+            displayProgress();
+            $("#progress_display").fadeIn("fast");
+        } else if(e.data.type == "progress_update"){
+            pathsTried = e.data.data;
+            displayProgress();
+        }        
+    }
+
+    // Wait for digiWorker to finish before returning
+    digiWorker.onmessage = function(e) {
+        if(e.data.type == "result"){
+            $("#progress_display").fadeOut("fast");
+            $("#overlay").fadeOut("fast");
+            $("#path_container_content").html(path);
+            $("#path_container_content").fadeIn("fast");
+        }
+    }
 }
+
 
 
 function displayProgress(){	
