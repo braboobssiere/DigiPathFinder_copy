@@ -33,7 +33,8 @@ function showRoute(route){
 			
 			pathContent+="<img class='flex-item' src='"+"images/"+route[i]+".png' />";
 			pathContent+="<div data-digimonid='"+route[i]+"' class='flex-item digi_name digi_name_placeholder'>";
-			pathContent+="#" + str(route[i]) + "</div>";
+			pathContent+="#" + route[i].toString() + "</div>";
+	
 			pathContent+="</div>";
 			pathContent+="<div data-target='"+route[i]+"' class='db_link flex-item'>";
 			pathContent+="<i class='fa fa-external-link' aria-hidden='true'></i>";
