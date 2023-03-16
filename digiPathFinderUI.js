@@ -87,18 +87,22 @@ function showRoute(route){
 		window.open(pathFinder.digiData[$(this).data("target")].url, '_blank');
 	});	
 	
-	$("#copy_to_clipboard").on("click", function(){		
-		var copyContent = "";
-		for(var i = 0; i < route.length; i++){
-			var moves = [];
-			Object.keys(pathFinder.wantedSkills).forEach(function(skillId){
-				if(pathFinder.digiData[route[i]].moves && pathFinder.digiData[route[i]].moves.indexOf(skillId) != -1){
-					moves.push(skillId);					
-				}
-			});
-			copyContent+="*"+localizationData[currentLocale].digimon[route[i]]+"\n";
-			
-			for(var j = 0; j < moves.length; j++){
+$("#copy_to_clipboard").on("click", function(){		
+  var copyContent = "";
+  for(var i = 0; i < route.length; i++){
+    var moves = [];
+    Object.keys(pathFinder.wantedSkills).forEach(function(skillId){
+      if(pathFinder.digiData[route[i]].moves && pathFinder.digiData[route[i]].moves.indexOf(skillId) != -1){
+        moves.push(skillId);					
+      }
+    });
+    copyContent+="*"+localizationData[currentLocale].digimon[route[i]]+"\n";
+  }
+  
+
+
+	
+	for(var j = 0; j < moves.length; j++){
 				copyContent+="\t>"+localizationData[currentLocale].moves[moves[j]]+"\n";
 			}
 			if(i < route.length-1){
@@ -110,6 +114,20 @@ function showRoute(route){
 			}
 			
 		}
+
+  // update the text box with the copied content
+  $("#copy_text_box").text(copyContent);
+  
+  // copy the content to the clipboard
+  var textarea = document.createElement("textarea");
+  textarea.value = copyContent;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+});
+
+
 		if(copyContent!= ""){
 			copyToClipboard(copyContent);
 		}		
@@ -220,6 +238,10 @@ function createControls(){
 	content+="</div>";
 	content+="</div>";
 	content+="</div>";
+	content+="<div id="copy_section">
+  <button id="copy_to_clipboard">Copy to Clipboard</button>
+  <div id="copy_text_box"></div>
+</div>";
 	content+="<div data-appstringhint='hint_copy' title='Copy the current path to text' id='copy_to_clipboard'><i class='fa fa-files-o' aria-hidden='true'></i></div>";
 	
 	$("#path_tools_container").html(content);
