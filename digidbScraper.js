@@ -52,6 +52,23 @@ DigiDBScraper.prototype.scrapeEntry = function(){
 				currentEntry.neighBours.next.push(id);
 			}
 		});
+ //test digivolve req scraper
+var $reqTable = $($dom).find(":contains(Digivolves Into)").closest("table");
+var reqString = "";
+$($reqTable).find("tr").each(function() {
+    var $tds = $(this).find("td");
+    if ($tds.length > 1) {
+        var label = $tds.eq(0).text().trim().replace(":", "");
+        var value = $tds.eq(1).text().trim().replace(",", "");
+        if (label.startsWith("Level") || label.startsWith("Requires")) {
+            reqString += label + " " + value + " ";
+        }
+    }
+});
+if (reqString.length > 0) {
+    currentEntry.dvReq = reqString.trim();
+}
+//end 
 		
 		var $movesTable = $($dom).find( ":contains(Attack Name)");
 		$($movesTable).find("a").each(function(){
