@@ -22,8 +22,6 @@ function DigiDBScraper() {
 
 }
 
-​
-
 DigiDBScraper.prototype.scrapeEntry = function() {
 
   var _this = this;
@@ -58,7 +56,7 @@ DigiDBScraper.prototype.scrapeEntry = function() {
 
     var $dom = $(data).find(".digiinfo");
 
-​
+
 
     var $nameContainer = $dom.find(".digiheader").first();
 
@@ -74,13 +72,12 @@ DigiDBScraper.prototype.scrapeEntry = function() {
 
     currentEntry.name = name;
 
-​
+
 
     var $from = $($dom).find(":contains(Digivolves From)").closest("table");
 
     $($from).find("a").each(function() {
 
-​
 
       var href = $(this).attr("href");
 
@@ -94,7 +91,7 @@ DigiDBScraper.prototype.scrapeEntry = function() {
 
     });
 
-​
+
 
     //test digivolve req scraper
 
@@ -148,7 +145,7 @@ DigiDBScraper.prototype.scrapeEntry = function() {
 
     //end 
 
-​
+
 
     var $movesTable = $($dom).find(":contains(Attack Name)");
 
@@ -170,7 +167,7 @@ DigiDBScraper.prototype.scrapeEntry = function() {
 
     });
 
-​
+
 
     if (_this.entries.length) {
 
@@ -184,9 +181,7 @@ DigiDBScraper.prototype.scrapeEntry = function() {
 
   });
 
-}
-
-​
+};
 
 var scraper = new DigiDBScraper();
 
@@ -202,7 +197,7 @@ $.when(scraper.done.promise()).then(function() {
 
 });
 
-​
+
 
 // Function to download data to a file
 
@@ -243,5 +238,3 @@ function download(data, filename, type) {
   }
 
 }
-
-​
