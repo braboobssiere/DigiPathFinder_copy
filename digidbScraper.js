@@ -197,8 +197,6 @@ $.when(scraper.done.promise()).then(function() {
 
 });
 
-
-
 // Function to download data to a file
 
 function download(data, filename, type) {
@@ -238,3 +236,4 @@ function download(data, filename, type) {
   }
 
 }
+
