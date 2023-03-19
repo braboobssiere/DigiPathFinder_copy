@@ -135,7 +135,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 	max-height: calc(100% - 340px);
 	overflow-y: auto;
 	position: relative;
-  overflow-anchor: none;
+  padding-bottom: 40px;
 }
 
 .path_arrow {
@@ -305,10 +305,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 	text-align: center;
 	z-index: 0;
 	text-transform: uppercase;
-		-o-text-transform: uppercase;
-		-ms-text-transform: uppercase;
-		-webkit-text-transform: uppercase;
-		-moz-text-transform: uppercase;
 }
 
 .cssload-loader:before,
@@ -327,29 +323,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 	height: 100%;
 	border-radius: 313px;
 	border: 16px solid rgba(251,206,5,0.98);
-	box-shadow: 0 0 156px rgb(251,206,5), inset 0 0 156px rgb(251,206,5);
-		-o-box-shadow: 0 0 156px rgb(251,206,5), inset 0 0 156px rgb(251,206,5);
-		-ms-box-shadow: 0 0 156px rgb(251,206,5), inset 0 0 156px rgb(251,206,5);
-		-webkit-box-shadow: 0 0 156px rgb(251,206,5), inset 0 0 156px rgb(251,206,5);
-		-moz-box-shadow: 0 0 156px rgb(251,206,5), inset 0 0 156px rgb(251,206,5);
+	box-shadow: 0 0 156px rgb(251,206,5), inset 0 0 156px rgb(251,206,5)
 }
 
 .cssload-loader:after {
 	z-index: 1;
 	animation: cssload-gogoloader 2.3s infinite 1.15s;
-		-o-animation: cssload-gogoloader 2.3s infinite 1.15s;
-		-ms-animation: cssload-gogoloader 2.3s infinite 1.15s;
-		-webkit-animation: cssload-gogoloader 2.3s infinite 1.15s;
-		-moz-animation: cssload-gogoloader 2.3s infinite 1.15s;
 }
 
 .cssload-loader:before {
 	z-index: 2;
 	animation: cssload-gogoloader 2.3s infinite;
-		-o-animation: cssload-gogoloader 2.3s infinite;
-		-ms-animation: cssload-gogoloader 2.3s infinite;
-		-webkit-animation: cssload-gogoloader 2.3s infinite;
-		-moz-animation: cssload-gogoloader 2.3s infinite;
 }
 
 
