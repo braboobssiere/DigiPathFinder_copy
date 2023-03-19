@@ -101,20 +101,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 }
 
 .path_digi_node {
-	border-radius: 4px;
-	padding: 5px;
-	margin: 10px;
-	display: block;
-	width: 300px;	
-	margin-left: auto;
-	margin-right: auto;
-	position: relative;
-	justify-content: flex-start;
-	background-color: #FFFFFF;
-	color: #444444;
-	-webkit-box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.75);
--moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.75);
-box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.75);
+  border-radius: 4px;
+  padding: 5px;
+  margin: 10px auto;
+  display: block;
+  min-width: 600px;	
+  position: relative;
+  justify-content: flex-start;
+  background-color: #FFFFFF;
+  color: #444444;
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.75);
 }
 
 .path_digi_node_regular {
@@ -496,6 +492,7 @@ box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.75);
 	padding: 10px;
 	padding-top: 5px;
     padding-bottom: 5px;
+	min-width: 500px;	
 
 }
 
@@ -514,7 +511,7 @@ box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.75);
 }
 
 #path_tools {
-	width: 500px;
+	width: 300px;
 	height: 40px;
 	margin-left: auto;
 	margin-right: auto;
@@ -528,6 +525,9 @@ box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.75);
 	border-bottom: 2px solid #334e9b;
 	border-right: 2px solid #334e9b;
 	border-left: 2px solid #334e9b;
+// test position
+	position: absolute;
+	bottom: 100%;
 }
 
 #path_tools:hover {
