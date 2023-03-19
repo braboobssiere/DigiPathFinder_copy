@@ -112,7 +112,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
   padding: 5px;
   margin: 10px auto;
   display: block;
-  width: auto;	
+  width: auto;
+  max-width: 500px;	
   position: relative;
   justify-content: flex-start;
   background-color: #FFFFFF;
