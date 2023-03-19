@@ -126,6 +126,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 	min-height: calc(50vh - 170px);
 	overflow-y: auto;
 	position: relative;
+	overflow-anchor: none;
 }
 
 .path_arrow {
@@ -480,7 +481,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 	padding: 10px;
 	padding-top: 5px;
     	padding-bottom: 5px;
-	overflow: auto;
+	max-width: 100%;
 }
 
 .controls_digi_icon {
