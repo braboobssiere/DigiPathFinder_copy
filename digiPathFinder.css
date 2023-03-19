@@ -124,7 +124,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 
 #path_container{
 	min-height: calc(50vh - 170px);
-	overflow-y: auto;
+	overflow-y: scroll;
 	position: relative;
 	overflow-anchor: none;
 }
@@ -462,8 +462,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 
 .flex-container {
 	display: flex;
-	    overflow-y: scroll;
-
 }
 
 .flex-item {
