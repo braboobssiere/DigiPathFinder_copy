@@ -51,7 +51,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 	margin: 0;
 	padding: 0;
 	color: #334e9b;
-	font-size: 2rem
+  max-height: 5vw;
+	font-size: 2rem;
 }
 
 .digi_select {
