@@ -51,7 +51,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 	margin: 0;
 	padding: 0;
 	color: #334e9b;
-  max-height: 5vw;
+  max-height: 5vh;
 	font-size: 2rem;
 }
 
@@ -138,7 +138,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 	max-height: calc(100% - 340px);
 	overflow-y: auto;
 	position: relative;
-  padding-bottom: 8vh;
+  padding-bottom: 5vh;
 }
 
 .path_arrow {
