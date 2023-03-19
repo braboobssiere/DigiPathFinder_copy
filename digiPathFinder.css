@@ -38,7 +38,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 
 .tool_header {
 	margin: 0;
-	padding: 10;
+	padding: 1;
 	background-color: #334e9b;
 	color: #FFFFFF;
 	font-weight: bold;
@@ -51,7 +51,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 	margin: 0;
 	padding: 0;
 	color: #334e9b;
-	font-size: 20px
+	font-size: 2rem
 }
 
 .digi_select {
