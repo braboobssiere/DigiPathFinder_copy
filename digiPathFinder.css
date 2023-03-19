@@ -42,7 +42,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 	background-color: #334e9b;
 	color: #FFFFFF;
 	font-weight: bold;
-	font-size: 2rem;
+	font-size: 16px;
 	height: 37px;
 	align-items: center;
 }
@@ -52,7 +52,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 	padding: 0;
 	color: #334e9b;
   max-height: 5vh;
-	font-size: 2rem;
+	font-size: 16px;
 }
 
 .digi_select {
@@ -459,7 +459,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 
 .digi_name {
 	text-align: center;
-	font-size: 20px;
+	font-size: 16px;
 	margin-left: 5px;
 }
 
