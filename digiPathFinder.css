@@ -135,6 +135,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 	max-height: calc(100% - 340px);
 	overflow-y: auto;
 	position: relative;
+  overflow-anchor: none;
 }
 
 .path_arrow {
