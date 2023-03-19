@@ -135,7 +135,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 }
 
 #path_container{
-	max-height: calc(100% - 340px);
+	/*max-height: calc(100% - 340px);*/
 	overflow-y: auto;
 	position: relative;
   padding-bottom: 5vh;
