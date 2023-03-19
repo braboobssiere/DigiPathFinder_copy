@@ -135,7 +135,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 	max-height: calc(100% - 340px);
 	overflow-y: auto;
 	position: relative;
-  padding-bottom: 40px;
+  padding-bottom: 8vh;
 }
 
 .path_arrow {
@@ -255,6 +255,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 
 #copy_to_clipboard {
 	position: absolute;
+  z-index: 999;
 	right: 3px;
 	top: 3px;
 	font-size: 30px;
@@ -441,12 +442,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 
 #discord_promotion {
 	background-color: white;
-	padding: 2px;
-	font-weight: bold;
-	text-align: right;
-	position: absolute;
-	right: 0;
-	z-index: 5;
 }
 
 .digi_header {
@@ -499,8 +494,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 }
 
 #path_tools {
-	width: 300px;
-	height: 40px;
+	max-width: 300px;
+	height: 5vh;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #476dd9;
