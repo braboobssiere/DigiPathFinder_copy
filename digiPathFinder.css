@@ -69,6 +69,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 	position: relative;
 	height: 60px;
 	width: 200px;
+	max-width: 40vw;
 }
 
 .control_block .db_link {
