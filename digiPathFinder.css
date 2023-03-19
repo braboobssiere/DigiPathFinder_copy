@@ -94,7 +94,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 #controls {
 	position: relative;
 	width: 100%;
-	height: auto;
+	max-height: calc(40vh - 1px);
 	background-color: white;
 }
 
@@ -123,8 +123,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 }
 
 #path_container{
-	min-height: calc(50vh - 170px);
-	overflow-y: scroll;
+	min-height: calc(50vh - 1px);
+	overflow-y: auto;
 	position: relative;
 	overflow-anchor: none;
 }
