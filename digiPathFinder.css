@@ -5,7 +5,9 @@ body {
 	overflow: hidden;
 	height: 100%;
 	
-background: linear - gradient(to bottom, rgba(51, 78, 155, 0.65) 0 % , rgba(51, 78, 155, 0.64) 50 % , rgba(0, 0, 0, 0) 100 % ); 
+background: -moz-linear-gradient(top,  rgba(51,78,155,0.65) 0%, rgba(51,78,155,0.64) 2%, rgba(0,0,0,0) 100%);
+background: -webkit-linear-gradient(top,  rgba(51,78,155,0.65) 0%,rgba(51,78,155,0.64) 2%,rgba(0,0,0,0) 100%);
+background: linear-gradient(to bottom,  rgba(51,78,155,0.65) 0%,rgba(51,78,155,0.64) 2%,rgba(0,0,0,0) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', endColorstr='#00000000',GradientType=0 );
 
 }
@@ -19,58 +21,42 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 }
 
 #content {
-	z - index: 1;
-
-  position: fixed;
-
-  top: 0;
-
-  height: 100 vh;
-
-  width: 100 vw;
-
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	height: 100vh;
+	width: 100vw;
 }
 
 #particles {
-	z - index: 0;
-
-  position: fixed;
-
-  top: 0;
-
-  height: 100 vh;
-
-  width: 100 vw;
+	z-index: 0;
+	position: fixed;
+	top: 0;
+	height: 100vh;
+	width: 100vw;
 }
 
 .tool_header {
 	margin: 0;
-
-  padding: 10;
-
-  background - color: #334e9b;
-
-  color: # FFFFFF;
-
-  font - weight: bold;
-
-  font - size: 2 rem;
-
-  height: 37 px;
-
-  align - items: center;
+	padding: 10;
+	background-color: #334e9b;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 2rem;
+	height: 37px;
+	align-items: center;
 }
 
 .header {
 	margin: 0;
 	padding: 0;
 	color: #334e9b;
-	font-size: 2rem;
+	font-size: 20px
 }
 
 .digi_select {
 	margin-top: 3px;
-	max-width: 200px;
+	width: 200px;
 }
 
 .control_block {	
@@ -81,13 +67,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 	margin: 4px;
 	border-radius: 4px;
 	position: relative;
-	height: 10vw; 
-
-  max-height: 60px; 
-
-  width: 50%; 
-
-  max-width: 200px; 
+	height: 60px;
+	width: 200px;
 }
 
 .control_block .db_link {
@@ -158,18 +139,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 }
 
 .path_arrow {
-	margin: 0 auto;
-
-        text - align: center;
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
 
 .set_start_button{
 	position: absolute;
-	top: 6px;
+	top: 0px;
 	right: 25px;
 	color: #444444;
 	cursor: pointer;	
-
+	top: 6px;
 }
 
 .set_start_button:hover{
@@ -178,11 +160,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 
 .set_banned_button{
 	position: absolute;
-	top: 6px;
+	top: 0px;
 	right: 5px;
 	color: #444444;
 	cursor: pointer;	
-	
+	top: 6px;
 }
 
 .set_banned_button:hover{
@@ -218,6 +200,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 
 .remove_ban_button{
 	position: absolute;
+	top: 0px;
 	right: 3px;
 	color: #FFFFFF;
 	cursor: pointer;	
@@ -231,6 +214,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 
 .remove_skill_button{
 	position: absolute;
+	top: 0px;
 	right: 3px;
 	color: #FFFFFF;
 	cursor: pointer;	
@@ -273,10 +257,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 	position: absolute;
 	right: 3px;
 	top: 3px;
-	font-size: 4vw;
+	font-size: 30px;
 	cursor: pointer;
 	color: #334e9b;
-z-index: 30;
 }
 
 #copy_to_clipboard:hover {
@@ -312,11 +295,9 @@ z-index: 30;
 }
 
 .cssload-loader {
-	width: 80 vw;
-
-              height: 80 vw;
-
-              line-height: 80 vw;
+	width: 469px;
+	height: 469px;
+	line-height: 469px;
 	margin-right: auto;
 	margin-left: auto;
 	position: relative;
@@ -330,15 +311,18 @@ z-index: 30;
 .cssload-loader:after {
 	opacity: 0;
 	box-sizing: border-box;
-		
+		-o-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
 	content: "\0020";
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	border-radius: 50%;
-	border: 4vw solid rgba(251,206,5,0.98);
+	border-radius: 313px;
+	border: 16px solid rgba(251,206,5,0.98);
 	box-shadow: 0 0 156px rgb(251,206,5), inset 0 0 156px rgb(251,206,5)
 }
 
@@ -368,12 +352,68 @@ z-index: 30;
 	}
 }
 
+@-o-keyframes cssload-gogoloader {
+	0% {
+		-o-transform: scale(0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		-o-transform: scale(1);
+		opacity: 0;
+	}
+}
+
+@-ms-keyframes cssload-gogoloader {
+	0% {
+		-ms-transform: scale(0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		-ms-transform: scale(1);
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes cssload-gogoloader {
+	0% {
+		-webkit-transform: scale(0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform: scale(1);
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes cssload-gogoloader {
+	0% {
+		-moz-transform: scale(0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		-moz-transform: scale(1);
+		opacity: 0;
+	}
+}
+
 #worker_cancel {
 	position: fixed;
 	right: 10;
 	bottom: 5;
 	color: #444444;
-	font-size: 6vw;
+	font-size: 60px;
 	cursor: pointer;
 	z-index: 9999;
 }
@@ -389,10 +429,10 @@ z-index: 30;
 
 #progress_display {	
 	color: #444444;
-	font-size: 10vw;
+	font-size: 100px;
 	z-index: 9999;
 	display: none;
-	width: 40vw;
+	width: 200px;
 	margin-left: auto;
 	margin-right: auto;
 	font-family:'digital-clock-font';
@@ -400,11 +440,13 @@ z-index: 30;
 
 
 #discord_promotion {
-	background-color: white
+	background-color: white;
+	padding: 2px;
 	font-weight: bold;
 	text-align: right;
 	position: absolute;
-	right: 0
+	right: 0;
+	z-index: 5;
 }
 
 .digi_header {
@@ -457,16 +499,20 @@ z-index: 30;
 }
 
 #path_tools {
-	width: 40%;
-	height: 8vh;
-	margin: 0 auto;
+	width: 300px;
+	height: 40px;
+	margin-left: auto;
+	margin-right: auto;
 	background-color: #476dd9;
 	align-items: center;
 	justify-content: center;
 	color: white;
-	border-radius: 50px;
+	border-bottom-right-radius: 50px;
+	border-bottom-left-radius: 50px;
 	cursor: pointer;
-	border: 2px solid #334e9b;
+	border-bottom: 2px solid #334e9b;
+	border-right: 2px solid #334e9b;
+	border-left: 2px solid #334e9b;
 // test position
 	position: absolute;
 	bottom: 100%;
