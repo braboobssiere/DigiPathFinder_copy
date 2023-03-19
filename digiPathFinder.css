@@ -131,7 +131,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 
 .path_arrow {
 	width: 300px;
-	max-height: 10px;
+	max-height: 25px;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
@@ -478,10 +478,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 }
 
 .control_section {
-	padding: 10px;
-	padding-top: 5px;
-    	padding-bottom: 5px;
-	max-width: 100%;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    overflow-y: scroll;
+    max-width: 95vw;
 }
 
 .controls_digi_icon {
@@ -551,3 +552,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 .banned_digi_name {
 	display: inline-block;
 }
+
