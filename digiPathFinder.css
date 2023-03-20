@@ -263,12 +263,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 
 #copy_to_clipboard {
 	position: absolute;
-  z-index: 999;
 	right: 3px;
 	top: 3px;
-	font-size: 30px;
+	font-size: 16px;
 	cursor: pointer;
-	color: #334e9b;
 }
 
 #copy_to_clipboard:hover {
