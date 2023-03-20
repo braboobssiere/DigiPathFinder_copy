@@ -2,4 +2,4 @@
 
 forked from: https://github.com/tshadowknight/DigiPathFinder
 
-Images and Digimon data: http://digidb.io
+Images and Digimon data: https://digidb.io
