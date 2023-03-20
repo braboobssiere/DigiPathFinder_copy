@@ -1,5 +1,3 @@
-# DigiPathFinder
-
-Source code for http://tshadowknight.com/DigiPathFinder.htm
+forked from https://github.com/tshadowknight/DigiPathFinder
 
 Images and Digimon data credit to http://digidb.io
