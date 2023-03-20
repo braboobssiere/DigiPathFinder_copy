@@ -96,11 +96,8 @@ function showRoute(route){
 					moves.push(skillId);					
 				}
 			});
-for (let ii = 0; ii < route.length; ii++) {
-		let pnumber = 1;
-  copyContent += pnumber + ". " + localizationData[currentLocale].digimon[route[i]]+"\n";
-		pnumber++;
-}
+
+  copyContent += i + ". " + localizationData[currentLocale].digimon[route[i]]+"\n";
 			for(var j = 0; j < moves.length; j++){
 				copyContent+="\t>"+localizationData[currentLocale].moves[moves[j]]+"\n";
 			}
