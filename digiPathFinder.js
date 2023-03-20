@@ -91,125 +91,63 @@ DigiPathFinder.prototype.setParams = function(params){
 	_this.defaultBans = params.defaultBans;
 }
 
-DigiPathFinder.prototype.calculateShortestPath = function(path, skill, skillContext) {
-    var _this = this;
-    var source = path[0];
-    var target = path[1];
-    var shortestPath;
-
-    if (source) {
-        shortestPath = _this.findRoute(path, skill, skillContext);
-    } else {
-        // If source is not specified, find the shortest path to the target from every node
-        shortestPath = null;
-        var nodes = Object.keys(_this.digiData);
-        nodes.forEach(function(node) {
-            if (_this.isBanned(node) || node === target) return;
-
-            var candidatePath = _this.findRoute([node, target], skill, skillContext);
-            if (!shortestPath || candidatePath.length < shortestPath.length) {
-                shortestPath = candidatePath;
-            }
-        });
-    }
-
-    return shortestPath;
-};
-
-
-DigiPathFinder.prototype.findClosestSkillHolderPath = function(skill, target, skillContext) {
-  var _this = this;
-  var shortestPath = null;
-
-  // Loop through all nodes to find shortest path from any node to target
-  for (var node in _this.digiData) {
-    if (_this.digiData.hasOwnProperty(node)) {
-      var path = _this.calculateShortestPath(node, target);
-      if (path && (!shortestPath || path.length < shortestPath.length)) {
-        shortestPath = path;
-      }
-    }
-  }
-  
-  if (!shortestPath) {
-    throw("Path not possible");
-  }
-  
-  var source = shortestPath[0];
-  return _this.findRoute([source, target], skill, skillContext);
+DigiPathFinder.prototype.findClosestSkillHolderPath = function(source, skill, target, skillContext){
+	var _this = this;
+	return _this.findRoute([source, target], skill, skillContext);
 }
 
 DigiPathFinder.prototype.findRoute = function(path, skill, skillContext){
-  var _this = this;
-  var source = path[0];
-  var target = path[1];
-  var stack = [];
-  var pathsToSource = {};
-  pathsToSource[source] = [];
-  var visited = {};
-  var pathFound = false;
-
-  if (!source && target) {
-    // Find shortest path from any node to target
-    var shortestPath = null;
-    for (var node in _this.digiData) {
-      if (_this.digiData.hasOwnProperty(node)) {
-        var path = _this.calculateShortestPath(node, target);
-        if (path && (!shortestPath || path.length < shortestPath.length)) {
-          shortestPath = path;
-        }
-      }
-    }
-    if (!shortestPath) {
-      throw("Path not possible");
-    }
-    source = shortestPath[0];
-  }
-
-  stack.push(source);
-  while(stack.length && !pathFound){
-    var current = stack.shift();
-    var neighbours = _this.digiData[current].neighBours.prev.concat(_this.digiData[current].neighBours.next);
-    var ctr = 0;
-    var skillCandidate;
-    var skillCandidateRating = 0;
-    while(ctr < neighbours.length && !pathFound){
-      var neighbourId = neighbours[ctr];
-      if(!_this.isBanned(neighbourId) && !visited[neighbourId] && neighbourId != current){
-        if(skill && _this.skillToDigis[skill][neighbourId]){
-          var rating = 0;
-          var moves = pathFinder.digiData[neighbourId].moves;
-          for(var k = 0; k < moves.length; k++){
-            if(skillContext[moves[k]]){
-              rating++;
-            }
-          }
-          if(rating > skillCandidateRating){
-            skillCandidateRating = rating;
-            skillCandidate = neighbourId;
-          }
-        }
-        if(neighbourId == target){
-          pathFound = true;
-        } else {
-          stack.push(neighbourId);
-        }
-        pathsToSource[neighbourId] = pathsToSource[current].concat([current]);
-      }
-      ctr++;
-    }
-    if(skillCandidate){
-      target = skillCandidate;
-      pathFound = true;
-    }
-    visited[current] = true;
-  }
-  if(!pathsToSource[target]){
-    throw("Path not possible");
-  }
-  return pathsToSource[target].concat([target]);
-};
-
+	var _this = this;	
+	var source = path[0];
+	var target = path[1];
+	var stack = [];
+	var pathsToSource = {};
+	pathsToSource[source] = [];
+	var visited = {};
+	var pathFound = false;
+	stack.push(source);
+	while(stack.length && !pathFound){
+		var current = stack.shift();		
+		var neighbours = _this.digiData[current].neighBours.prev.concat(_this.digiData[current].neighBours.next);
+		var ctr = 0;
+		var skillCandidate;
+		var skillCandidateRating = 0;
+		while(ctr < neighbours.length && !pathFound){
+			var neighbourId = neighbours[ctr];
+			if(!_this.isBanned(neighbourId) && !visited[neighbourId] && neighbourId != current){
+				if(skill && _this.skillToDigis[skill][neighbourId]){
+					var rating = 0;
+					var moves = pathFinder.digiData[neighbourId].moves; 
+					for(var k = 0; k < moves.length; k++){
+						if(skillContext[moves[k]]){
+							rating++;
+						}
+					}
+					if(rating > skillCandidateRating){
+						skillCandidateRating = rating;
+						skillCandidate = neighbourId;
+					}
+				}
+				if(neighbourId == target){
+					pathFound = true;
+				} else {
+					stack.push(neighbourId);					
+				}
+				pathsToSource[neighbourId] = pathsToSource[current].concat([current]);				
+			}			
+			ctr++;
+		}
+		if(skillCandidate){
+			target = skillCandidate;
+			pathFound = true;
+		}
+		visited[current] = true;
+	}
+	if(!pathsToSource[target]){
+		throw("Path not possible");
+	}
+	return pathsToSource[target].concat([target]);
+}
 
 DigiPathFinder.prototype.isBanned = function(id){
 	var _this = this;
