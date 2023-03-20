@@ -139,10 +139,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6334e9b', e
 }
 
 #path_container{
-	max-height: 60%;
+	max-height: 70%;
 	overflow-y: auto;
 	position: relative;
-  padding-bottom: 5vh;
+  padding-bottom: 2vh;
 }
 
 .path_arrow {
