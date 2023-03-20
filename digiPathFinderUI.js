@@ -97,7 +97,9 @@ function showRoute(route){
 				}
 			});
 
+
   copyContent += i+1 + ". " + localizationData[currentLocale].digimon[route[i]]+"\n";
+
 			for(var j = 0; j < moves.length; j++){
 				copyContent+="\t>"+localizationData[currentLocale].moves[moves[j]]+"\n";
 			}
