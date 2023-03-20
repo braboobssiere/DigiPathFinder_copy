@@ -117,10 +117,16 @@ function showRoute(route){
 	localizePage();
 }
 
-function copyToClipboard(val){
-     var dummy = $('<textarea style="position: fixed; right: -500px;">').val(val).appendTo('body').select()
-	document.execCommand('copy')
+function copyToClipboard(val) {
+  navigator.clipboard.writeText(val)
+    .then(() => {
+      console.log(`Copied to clipboard: ${val}`);
+    })
+    .catch((err) => {
+      console.error('Failed to copy text: ', err);
+    });
 }
+
 
 function showBans(){
 	var bansContent = "";
@@ -208,7 +214,7 @@ function createControls(){
 	
 	
 	populateMoveList();
-	populateDigimonList("start_digi", true);
+	populateDigimonList("start_digi");
 	populateDigimonList("end_digi", true);
 	//secondary control pane
 	content = "";
