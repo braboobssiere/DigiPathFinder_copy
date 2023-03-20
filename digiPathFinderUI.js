@@ -208,7 +208,7 @@ function createControls(){
 	
 	
 	populateMoveList();
-	populateDigimonList("start_digi");
+	populateDigimonList("start_digi", true);
 	populateDigimonList("end_digi", true);
 	//secondary control pane
 	content = "";
