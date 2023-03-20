@@ -97,10 +97,8 @@ function showRoute(route){
 				}
 			});
 		let pnumber = 1;
-for (let i = 0; i < route.length; i++) {
   copyContent += pnumber + ". " + localizationData[currentLocale].digimon[route[i]]+"\n";
 		pnumber++;
-}	
 			for(var j = 0; j < moves.length; j++){
 				copyContent+="\t>"+localizationData[currentLocale].moves[moves[j]]+"\n";
 			}
