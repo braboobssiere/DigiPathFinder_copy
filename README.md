@@ -1,3 +1,5 @@
-forked from https://github.com/tshadowknight/DigiPathFinder
+# Credits:
 
-Images and Digimon data credit to http://digidb.io
+forked from: https://github.com/tshadowknight/DigiPathFinder
+
+Images and Digimon data: http://digidb.io
