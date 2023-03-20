@@ -226,7 +226,8 @@ function createControls(){
 	content+="</div>";
 	content+="</div>";
 	content+="</div>";
-	content+="<div data-appstringhint='hint_copy' title='Copy the current path to text' id='copy_to_clipboard'><i class='fa fa-files-o' aria-hidden='true'></i></div>";
+  content += "<button data-appstringhint='hint_copy' title='Copy the current path to text' id='copy_to_clipboard'>Copy</button>";
+	//content+="<div data-appstringhint='hint_copy' title='Copy the current path to text' id='copy_to_clipboard'><i class='fa fa-files-o' aria-hidden='true'></i></div>";
 	
 	$("#path_tools_container").html(content);
 	
