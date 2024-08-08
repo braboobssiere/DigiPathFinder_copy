@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	</head> 
+	<script type="text/javascript" src='particles.js'></script>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src='digiPathWorker.js'></script>
+	<script type="text/javascript" src='digiPathFinder.js'></script>
+	<script type="text/javascript" src='digiPathFinderUI.js'></script>	
+	
+	
+	<link rel="stylesheet" type="text/css" href="digiPathFinder.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+	<body>
+		<div id='load_hider'></div>
+		<div id='content'>
+		<div class='tool_header flex-container'>
+		<div data-appstring='app_title'>
+			Cyber Sleuth Evolution Path Finder
+		</div>	
+		<div id='locale_select_container' class='flex-container'>
+		<div data-appstring='label_language'>
+			Language
+		</div>	
+		<select class='digi_select' id='locale_select'>
+		<option selected value='ENG'>English</option>
+		<option  value='JPN'>日本語</option>
+		</select>
+		</div>		
+		</div>
+		<div id='controls'></div>
+		<div id='path_tools_container' class='flex-container'>
+		
+		</div>
+		<div id='path_container'>		
+		<div id='path_container_content'></div>
+		</div>
+		<div id='overlay'>
+		
+		<div id='worker_cancel'>
+			Cancel
+		</div>
+		
+		<div class="outer">
+		<div class="middle">
+		<div class="inner">
+		<div class="cssload-loader">
+			<div class="outer">
+			<div class="middle">
+			<div class="inner">
+			<div id='progress_display'>
+				<div id='progress_current'>0</div>
+				<div id='progress_goal'>0</div>
+			</div>
+			</div>
+			</div>
+			</div>
+		</div>
+
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div id='particles'>
+		</div>
+	</body>
+</html>
